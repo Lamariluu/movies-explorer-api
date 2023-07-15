@@ -10,7 +10,7 @@ const {
 
 const { updateProfileValidation } = require('../middlewares/validation');
 
-usersRouter.get('/', getUsers);
+usersRouter.get('/me', getUsers);
 //usersRouter.get('/me', getCurrentUser);
 //usersRouter.get('/:userId', getUserByIdValidation, getUserById);
 //usersRouter.patch('/me/avatar', updateAvatarValidation, updateAvatar);
