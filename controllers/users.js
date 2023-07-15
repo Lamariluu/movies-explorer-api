@@ -19,7 +19,7 @@ const {
 //    .catch(next);
 //};
 
-const getCurrentUser = (req, res, next) => {
+const getUser = (req, res, next) => {
   User.findById(req.user._id)
     .then((user) => {
       if (!user) {
@@ -120,7 +120,7 @@ const login = (req, res, next) => {
 
 module.exports = {
   //getUsers,
-  getCurrentUser,
+  getUser,
   //getUserById,
   createUser,
   updateProfile,
