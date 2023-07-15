@@ -1,16 +1,16 @@
-require('dotenv').config();ё
-const express = require('express');ё
-const cors = require('cors');ё
-const helmet = require('helmet');ё
-const mongoose = require('mongoose');ё
-const rateLimit = require('express-rate-limit');ё
-const { errors } = require('celebrate');ё
+require('dotenv').config();
+const express = require('express');
+const cors = require('cors');
+const helmet = require('helmet');
+const mongoose = require('mongoose');
+const rateLimit = require('express-rate-limit');
+const { errors } = require('celebrate');
 //const { createUserValidation, loginValidation } = require('./middlewares/validation');
 //const auth = require('./middlewares/auth');
-const router = require('./routes/router');ё
+const router = require('./routes/router');
 //const { login, createUser } = require('./controllers/users');
-const { requestLogger, errorLogger } = require('./middlewares/logger');ё
-const { handleErrors } = require('./middlewares/handleErrors');ё
+const { requestLogger, errorLogger } = require('./middlewares/logger');
+const { handleErrors } = require('./middlewares/handleErrors');
 
 const app = express();
 const {
@@ -26,7 +26,7 @@ app.use(requestLogger); // подключаем логгер запросов
 
 //app.get('/crash-test', () => {
 //  setTimeout(() => {
-//    throw new Error('Сервер сейчас упадёт');
+//    throw new Error('Сервер сейчас упадт');
 //  }, 0);
 //});
 
