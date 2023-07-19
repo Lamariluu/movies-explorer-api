@@ -1,5 +1,5 @@
 {
-  "name": "express-mesto-gha",
+  "name": "movies-explorer-api",
   "version": "1.0.0",
   "description": "backend mesto",
   "main": "app.js",
@@ -30,7 +30,7 @@
     "express-winston": "^4.2.0",
     "helmet": "^7.0.0",
     "jsonwebtoken": "^9.0.0",
-    "mongoose": "^7.2.1",
+    "mongoose": "^7.3.4",
     "validator": "^13.9.0",
     "winston": "^3.9.0"
   },

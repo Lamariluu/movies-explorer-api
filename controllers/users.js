@@ -13,11 +13,13 @@ const {
   HTTP_STATUS_CREATED,
 } = require('../utils/constants');
 
-//const getUsers = (req, res, next) => {
+const { jwtKey } = require('../utils/option');
+
+// const getUsers = (req, res, next) => {
 //  User.find({})
 //    .then((users) => res.send(users))
 //    .catch(next);
-//};
+// };
 
 const getUser = (req, res, next) => {
   User.findById(req.user._id)
@@ -30,7 +32,7 @@ const getUser = (req, res, next) => {
     .catch((err) => handleError(err, next));
 };
 
-//const getUserById = (req, res, next) => {
+// const getUserById = (req, res, next) => {
 //  const { userId } = req.params;
 //  User.findById(userId)
 //    .then((user) => {
@@ -39,7 +41,7 @@ const getUser = (req, res, next) => {
 //      } return res.send(user);
 //    })
 //    .catch((err) => handleError(err, next));
-//};
+// };
 
 const createUser = (req, res, next) => {
   const {
@@ -89,7 +91,7 @@ const updateProfile = (req, res, next) => {
     .catch((err) => handleError(err, next));
 };
 
-//const updateAvatar = (req, res, next) => {
+// const updateAvatar = (req, res, next) => {
 //  const { avatar } = req.body;
 
 //  User.findByIdAndUpdate(
@@ -104,7 +106,7 @@ const updateProfile = (req, res, next) => {
 //      return res.send({ avatar });
 //    })
 //    .catch((err) => handleError(err, next));
-//};
+// };
 
 const login = (req, res, next) => {
   const { email, password } = req.body;
@@ -112,18 +114,18 @@ const login = (req, res, next) => {
     .findUserByCredentials(email, password)
     // создание JWT с токеном сроком на неделю
     .then((user) => {
-      const token = jwt.sign({ _id: user._id }, NODE_ENV === 'production' ? JWT_SECRET : 'secret-key', { expiresIn: '7d' });
+      const token = jwt.sign({ _id: user._id }, NODE_ENV === 'production' ? JWT_SECRET : jwtKey, { expiresIn: '7d' });
       res.send({ token });
     })
     .catch(next);
 };
 
 module.exports = {
-  //getUsers,
+  // getUsers,
   getUser,
-  //getUserById,
+  // getUserById,
   createUser,
   updateProfile,
-  //updateAvatar,
+  // updateAvatar,
   login,
 };

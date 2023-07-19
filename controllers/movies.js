@@ -1,6 +1,6 @@
 const Movie = require('../models/movie');
 const ForbiddenError = require('../errors/ForbiddenError');
-//const NotFoundError = require('../errors/NotFoundError');
+// const NotFoundError = require('../errors/NotFoundError');
 
 const {
   handleError,
@@ -15,8 +15,33 @@ const getMovies = (req, res, next) => {
 };
 
 const createMovie = (req, res, next) => {
-  const { name, link } = req.body;
-  Movie.create({ name, link, owner: req.user._id })
+  const {
+    country,
+    director,
+    duration,
+    year,
+    description,
+    image,
+    trailerLink,
+    thumbnail,
+    movieId,
+    nameRU,
+    nameEN,
+  } = req.body;
+  Movie.create({
+    country,
+    director,
+    duration,
+    year,
+    description,
+    image,
+    trailerLink,
+    thumbnail,
+    movieId,
+    nameRU,
+    nameEN,
+    owner: req.user._id,
+  })
     .then((movie) => res.status(HTTP_STATUS_CREATED).send(movie))
     .catch(next);
 };
@@ -39,7 +64,7 @@ const deleteMovie = (req, res, next) => {
     .catch((err) => handleError(err, next));
 };
 
-//const addLike = (req, res, next) => {
+// const addLike = (req, res, next) => {
 //  Movie.findByIdAndUpdate(
 //    req.params.movieId,
 //    { $addToSet: { likes: req.user._id } },
@@ -51,9 +76,9 @@ const deleteMovie = (req, res, next) => {
 //      } return res.status(HTTP_STATUS_OK).send(movie);
 //    })
 //    .catch((err) => handleError(err, next));
-//};
+// };
 
-//const deleteLike = (req, res, next) => {
+// const deleteLike = (req, res, next) => {
 //  Movie.findByIdAndUpdate(
 //    req.params.movieId,
 //    { $pull: { likes: req.user._id } },
@@ -65,12 +90,12 @@ const deleteMovie = (req, res, next) => {
 //      } return res.status(HTTP_STATUS_OK).send(movie);
 //    })
 //    .catch((err) => handleError(err, next));
-//};
+// };
 
 module.exports = {
   getMovies,
   createMovie,
   deleteMovie,
-  //addLike,
-  //deleteLike,
+  // addLike,
+  // deleteLike,
 };

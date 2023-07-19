@@ -5,10 +5,10 @@ const allowedCors = [
   'https://localhost:3000',
   'http://localhost:3001',
   'https://localhost:3001',
-  'https://lamarilu.nomoredomains.rocks',
-  'https://api.lamarilu.nomoredomains.rocks',
-  'http://lamarilu.nomoredomains.rocks',
-  'http://api.lamarilu.nomoredomains.rocks',
+  'https://api.lamarilumovies.nomoredomains.xyz',
+  'http://api.lamarilumovies.nomoredomains.xyz',
+  'https://lamarilumovies.nomoredomains.xyz',
+  'http://lamarilumovies.nomoredomains.xyz',
 ];
 
 const cors = (req, res, next) => {

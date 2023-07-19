@@ -5,17 +5,17 @@ const helmet = require('helmet');
 const mongoose = require('mongoose');
 const rateLimit = require('express-rate-limit');
 const { errors } = require('celebrate');
-//const { createUserValidation, loginValidation } = require('./middlewares/validation');
-//const auth = require('./middlewares/auth');
+// const { createUserValidation, loginValidation } = require('./middlewares/validation');
+// const auth = require('./middlewares/auth');
 const router = require('./routes/router');
-//const { login, createUser } = require('./controllers/users');
+// const { login, createUser } = require('./controllers/users');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const { handleErrors } = require('./middlewares/handleErrors');
 
 const app = express();
 const {
   MONGO_URL = 'mongodb://127.0.0.1:27017/bitfilmsdb',
-  PORT = 3000
+  PORT = 3000,
 } = process.env;
 
 app.use(cors());
@@ -24,11 +24,11 @@ app.use(express.json());
 
 app.use(requestLogger); // подключаем логгер запросов
 
-//app.get('/crash-test', () => {
+// app.get('/crash-test', () => {
 //  setTimeout(() => {
 //    throw new Error('Сервер сейчас упадт');
 //  }, 0);
-//});
+// });
 
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
@@ -40,9 +40,9 @@ const limiter = rateLimit({
 app.use(limiter);
 app.use(helmet());
 
-//app.post('/signin', loginValidation, login);
-//app.post('/signup', createUserValidation, createUser);
-//app.use(auth);
+// app.post('/signin', loginValidation, login);
+// app.post('/signup', createUserValidation, createUser);
+// app.use(auth);
 app.use(router);
 app.use(errorLogger); // подключаем логгер ошибок
 app.use(errors());
