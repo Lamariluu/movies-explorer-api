@@ -1,7 +1,7 @@
 {
   "name": "movies-explorer-api",
   "version": "1.0.0",
-  "description": "backend mesto",
+  "description": "backend movies",
   "main": "app.js",
   "scripts": {
     "dev": "nodemon app.js",
@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Lamariluu/express-mesto-gha.git"
+    "url": "git+https://github.com/Lamariluu/movies-explorer-api.git"
   },
   "keywords": [],
   "author": "Maria Troianovskaia",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Lamariluu/express-mesto-gha/issues"
+    "url": "https://github.com/Lamariluu/movies-explorer-api/issues"
   },
-  "homepage": "https://github.com/Lamariluu/express-mesto-gha#readme",
+  "homepage": "https://github.com/Lamariluu/movies-explorer-api#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "celebrate": "^15.0.1",

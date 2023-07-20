@@ -51,11 +51,9 @@ app.use(handleErrors);
 mongoose
   .connect(MONGO_URL)
   .then(() => {
-    // eslint-disable-next-line no-console
     console.log('Connected to MongoDB');
   })
   .catch((err) => {
-    // eslint-disable-next-line no-console
     console.log(err);
   });
 
