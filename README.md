@@ -3,5 +3,5 @@
 
 Адрес репозитория: https://github.com/Lamariluu/movies-explorer-api
 
-IP-адрес 
-Backend
+IP-адрес: 51.250.102.164
+Backend: api.lamarilumovies.nomoredomains.xyz
